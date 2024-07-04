@@ -8,3 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+
+Rails.application.routes.draw do
+  root "articles#index" # Definindo como rota raiz a página de listagem de artigos
+
+  get "/articles", to: "articles#index"
+
+  # Para mais detalhes da DSL disponível para esse arquivo, veja https://guides.rubyonrails.org/routing.html
+end

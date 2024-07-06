@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # get "/articles", to: "articles#index"
   # get "articles/:id", to: "articles#show"
 
-  resources :articles # Cria todas as rotas necessárias para um recurso RESTful
-
+  resources :articles do # Cria todas as rotas necessárias para um recurso RESTful
+    resources :comments
+  end
 end

@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  # Autenticação básica para todas as ações do controller, exceto para as ações index e show
+  
   def index
     @articles = Article.all # Busca todos os artigos do banco de dados
   end
